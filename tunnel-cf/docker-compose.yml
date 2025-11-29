@@ -3,7 +3,7 @@ version: '3'
 services:
   # cloudflare tunnel
   cloudflare-tunnel:
-    image: cloudflare/cloudflared
+    image: cloudflare/cloudflared:lts
     container_name: cloudflare-tunnel
     restart: unless-stopped
     command: tunnel run

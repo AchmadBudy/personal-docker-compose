@@ -1,0 +1,20 @@
+version: '3'
+services:
+  vito:
+    image: vitodeploy/vito:latest
+    ports:
+      - '8000:80'
+    env_file: stack.env
+    volumes:
+      - 'vito-storage:/var/www/html/storage'
+      - 'vito-plugins:/var/www/html/app/Vito/Plugins'
+    networks:
+      - jalur_ipv6_network      # network tambahan (sudah ada)
+volumes:
+  vito-storage:
+    driver: local
+  vito-plugins:
+    driver: local
+networks:
+  jalur_ipv6_network:
+    external: true        
